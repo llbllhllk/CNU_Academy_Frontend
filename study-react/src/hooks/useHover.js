@@ -1,28 +1,24 @@
-import { useState, useCallback, useRef, useEffect } from 'react'
+import React, { useState, useCallback, useEffect, useRef } from 'react'
 
 const useHover = () => {
   const [state, setState] = useState(false)
   const ref = useRef(null)
 
   const handleMouseOver = useCallback(() => setState(true), [])
-
   const handleMouseOut = useCallback(() => setState(false), [])
 
   useEffect(() => {
-    const elem = ref.current
-
-    if (elem) {
-      // depth update
-      elem.addEventListener('mouseover', handleMouseOver)
-      elem.addEventListener('mouseout', handleMouseOut)
+    const element = ref.current
+    if (element) {
+      element.addEventListener('mouseover', handleMouseOver)
+      element.addEventListener('mouseout', handleMouseOut)
 
       return () => {
-        // Unmount
-        elem.removeEventListener('mouseover', handleMouseOver)
-        elem.removeEventListener('mouseout', handleMouseOut)
+        element.removeEventListener('mouseover', handleMouseOver)
+        element.removeEventListener('mouseout', handleMouseOut)
       }
     }
-  }, [ref, handleMouseOut, handleMouseOver])
+  }, [ref, handleMouseOut, handleMouseOut])
 
   return [ref, state]
 }
