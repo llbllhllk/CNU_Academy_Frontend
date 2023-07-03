@@ -1,18 +1,18 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from 'react'
 
 const AutoCounter = () => {
-  const [count, setCount] = useState(0);
-  const intervalId = useRef();
+  const [count, setCount] = useState(0)
+  const intervalId = useRef()
 
   const handleStart = () => {
     intervalId.current = setInterval(() => {
-      setCount((count) => count + 1);
-    }, 1000);
-  };
+      setCount((count) => count + 1)
+    }, 1000)
+  }
 
   const handleStop = () => {
-    clearInterval(intervalId.current);
-  };
+    clearInterval(intervalId.current)
+  }
 
   return (
     <>
@@ -20,7 +20,7 @@ const AutoCounter = () => {
       <button onClick={handleStart}>Start</button>
       <button onClick={handleStop}>Stop</button>
     </>
-  );
-};
+  )
+}
 
-export default AutoCounter;
+export default AutoCounter
