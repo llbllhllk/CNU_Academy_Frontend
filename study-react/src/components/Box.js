@@ -1,15 +1,10 @@
 import React from 'react'
+import styled from '@emotion/styled'
 
-const Box = React.memo(() => {
-  console.log('Render Box')
-
-  const style = {
-    width: 100,
-    height: 100,
-    backgroundColor: 'red',
-  }
-
-  return <div style={style}></div>
-})
+const Box = styled.div`
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+`
 
 export default Box
