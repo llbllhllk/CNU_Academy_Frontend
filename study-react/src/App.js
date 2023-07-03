@@ -1,14 +1,7 @@
-import React, { useState, useCallback } from 'react'
-
-import Box from './components/Box'
+import React from 'react'
 
 function App() {
-  return (
-    <>
-      <Box />
-      
-    </>
-  )
+  return <></>
 }
 
 export default App
