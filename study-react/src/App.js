@@ -1,16 +1,15 @@
-import { useRef } from 'react'
-import Input from './components/Input'
-import AutoCounter from './components/AutoCounter'
+import React, { useState } from 'react'
+import ShowSum from './components/ShowSum'
 
 function App() {
-  const inputRef = useRef()
+  const [label, setLabel] = useState('result')
 
   return (
-    <div>
-      <Input ref={inputRef} />
-      <button onClick={() => inputRef.current.focus()}>확인</button>
-      <AutoCounter />
-    </div>
+    <>
+      <button onClick={() => setLabel(label + ':')}>Change Label</button>
+
+      <ShowSum label={'result'} n={500} />
+    </>
   )
 }
 
