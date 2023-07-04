@@ -1,7 +1,15 @@
 import React from 'react'
 
+import LoginForm from './components/LoginForm'
+import SignUpForm from './components/SignUpForm'
+
 function App() {
-  return <></>
+  return (
+    <>
+      <LoginForm />
+      <SignUpForm />
+    </>
+  )
 }
 
 export default App
