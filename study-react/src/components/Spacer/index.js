@@ -1,37 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
+// type: horizontal(가로), vertical(세로) 기준으로 margin 적용
 const Spacer = ({ children, type = 'horizontal', size = 8, ...props }) => {
   const spacerStyle = {
-    ...props.style,
+    ...props,
     display: type === 'vertical' ? 'block' : 'inline-block',
     verticalAlign: type === 'horizontal' ? 'middle' : undefined,
   }
 
-  // 자식요소 접근 가능
-  const nodes = React.Children.toArray(children)
-    .filter((elemet) => React.isValidElement(element))
-    .map((element, index, elements) => {
-      return React.cloneElement(element, {
-        ...element.props,
-        style: {
-          ...element.props.style,
-          marginRight:
-            type === 'horizontal' && index !== elements.length - 1
-              ? size
-              : undefined,
-          marginBottom:
-            type === 'vertical' && index !== elements.length - 1
-              ? size
-              : undefined,
-        },
-      })
-    })
-
   return (
     <div {...props} style={spacerStyle}>
-      {nodes}
+      {children}
     </div>
   )
 }
 
-export default Spacer
+return Spacer
