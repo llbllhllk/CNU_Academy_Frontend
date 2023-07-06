@@ -1,39 +1,35 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const ListItem = styled.li`
+const ListContainer = styled.li`
   display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 8px 0;
-  border-bottom: 1px solid black;
+  list-style: none;
+  font-size: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid #000;
   cursor: pointer;
+
+  & div {
+    margin-right: 14px;
+  }
+
+  & div:last-child {
+    margin-right: 0;
+  }
 `;
 
-const Symbol = styled.div`
-  font-size: 24px;
-  margin-right: 16px;
-`;
-
-const Title = styled.div`
-  width: 200px;
-`;
-
-const Keywords = styled.div`
-  flex: 1;
-`;
-
-const EmojiListItem = ({ emoji }) => {
-  const handleClickCopy = () => {
+const EmojiListItem = ({ emoji, onToggle }) => {
+  const handleClickList = () => {
+    onToggle(true);
     navigator.clipboard.writeText(emoji.emoji);
   };
-
+  
   return (
-    <ListItem onClick={handleClickCopy}>
-      <Symbol>{emoji.emoji}</Symbol>
-      <Title>{emoji.aliases}</Title>
-      <Keywords>{emoji.tags}</Keywords>
-    </ListItem>
+    <ListContainer onClick={handleClickList}>
+      <div>{emoji.emoji}</div>
+      <div>{emoji.aliases}</div>
+      <div>{emoji.description}</div>
+    </ListContainer>
   );
 };
 

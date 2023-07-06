@@ -1,13 +1,13 @@
+import React from "react";
 import styled from "@emotion/styled";
 
-const Heading = styled.h1`
-  margin: 0;
+const HeaderContainer = styled.h1`
   font-size: 32px;
   text-align: center;
 `;
 
 const Header = () => {
-  return <Heading>Emoji Search</Heading>;
+  return <HeaderContainer>🐻‍❄️ emoji search 🐻‍❄️</HeaderContainer>;
 };
 
 export default Header;
