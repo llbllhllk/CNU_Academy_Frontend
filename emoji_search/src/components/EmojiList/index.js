@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 import EmojiListItem from "../EmojiListItem";
 
@@ -21,6 +22,12 @@ const EmojiList = ({ emojis, onToggle, keyword }) => {
         ))}
     </Container>
   );
+};
+
+EmojiList.propTypes = {
+  emojis: PropTypes.array,
+  onToggle: PropTypes.func,
+  keyword: PropTypes.string,
 };
 
 export default EmojiList;

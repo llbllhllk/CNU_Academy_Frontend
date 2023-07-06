@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const Input = styled.input`
   width: 100%;
@@ -14,6 +15,10 @@ const Input = styled.input`
 
 const Search = ({ onSearch }) => {
   return <Input onChange={useCallback((e) => onSearch(e.target.value), [])} />;
+};
+
+Search.propTypes = {
+  onSearch: PropTypes.func,
 };
 
 export default Search;

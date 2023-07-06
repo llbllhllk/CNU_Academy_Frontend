@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 
 import BackDrop from "../BackDrop";
 import ModalOverlay from "../ModalOverlay";
@@ -16,6 +17,10 @@ const Modal = ({ onToggle }) => {
       )}
     </>
   );
+};
+
+Modal.propTypes = {
+  onToggle: PropTypes.func,
 };
 
 export default Modal;

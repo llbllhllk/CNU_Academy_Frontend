@@ -1,4 +1,5 @@
 import React from "react";
+import PropTyeps from "prop-types";
 import styled from "@emotion/styled";
 
 const ListContainer = styled.li`
@@ -23,7 +24,7 @@ const EmojiListItem = ({ emoji, onToggle }) => {
     onToggle(true);
     navigator.clipboard.writeText(emoji.emoji);
   };
-  
+
   return (
     <ListContainer onClick={handleClickList}>
       <div>{emoji.emoji}</div>
@@ -31,6 +32,11 @@ const EmojiListItem = ({ emoji, onToggle }) => {
       <div>{emoji.description}</div>
     </ListContainer>
   );
+};
+
+EmojiListItem.propTypes = {
+  emoji: PropTyeps.object,
+  onToggle: PropTyeps.func,
 };
 
 export default EmojiListItem;

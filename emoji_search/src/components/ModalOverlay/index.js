@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 
 const ModalContainer = styled.div`
   width: 40%;
@@ -38,6 +39,10 @@ const ModalOverlay = ({ onToggle }) => {
       <Button onClick={() => onToggle(false)}>확인</Button>
     </ModalContainer>
   );
+};
+
+ModalOverlay.PropTypes = {
+  onToggle: PropTypes.func,
 };
 
 export default ModalOverlay;
