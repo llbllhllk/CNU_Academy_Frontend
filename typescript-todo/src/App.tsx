@@ -13,18 +13,12 @@ const Container = styled.div`
 
 const App = () => {
   return (
-    <TaskProvider>
-      <Container>
-        <Header>todo</Header>
-        <NewTaskForm />
-        <TaskList css={{ marginTop: 16 }} />
-      </Container>
-    </TaskProvider>
+    <Container>
+      <Header>todo</Header>
+      <NewTaskForm />
+      <TaskList css={{ marginTop: 16 }} />
+    </Container>
   );
 };
 
 export default App;
-
-// craco
-// emotion
-// storybook

@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { useTask } from "../../contexts/TaskProvider";
 import Task from "../Task";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux";
 
 const TaskList = (props: any) => {
-  const { tasks } = useTask();
+  // typescript로 인해 useSelector의 type이 없어서 에러가 발생한다. 때문에 rootReducer의 타입으로 useSelector의 type을 지정해야한다.
+  const tasks = useSelector((store: RootState) => store.tasks);
+
   return (
     <UnorderedList {...props}>
-      {tasks.map((item) => (
+      {tasks.map((item: any) => (
         <Task
           key={item.id}
           id={item.id}

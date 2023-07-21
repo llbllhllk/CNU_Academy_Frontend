@@ -1,4 +1,3 @@
-import React from "react";
 import NewTaskForm from "../components/NewTaskForm";
 
 export default {
