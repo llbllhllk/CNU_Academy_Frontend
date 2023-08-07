@@ -1,16 +1,15 @@
 import React, { useEffect } from "react";
 
-import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
-import { fetchAllPost } from "../redux/posts";
 import Header from "../components/Header";
-import { RootState, store } from "../redux";
 import PostList from "../components/PostList";
+import { useDispatch } from "react-redux";
+import { fetchAllPost } from "../redux/posts";
 
 const PostsPage = () => {
-  const dispatch: ThunkDispatch<RootState, any, AnyAction> = store.dispatch;
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllPost());
+    dispatch(fetchAllPost() as any);
   }, [dispatch]);
 
   return (
