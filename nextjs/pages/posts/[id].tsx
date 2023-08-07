@@ -6,8 +6,8 @@ export const getServerSideProps = async (context: NextPageContext) => {
   const postId = context.query.id;
 
   try {
-    const { data: post } = await axios(
-      `https://jsonplaceholder.typicode.com/posts/${postId}`
+    const { data: post } = await axios.get(
+      `http://localhost:3000/posts/${postId}`
     );
     return {
       props: { post },

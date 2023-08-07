@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const getServerSideProps = async () => {
   const { data: posts } = await axios.get(
-    "https://jsonplaceholder.typicode.com/posts"
+    "http://localhost:3000/posts"
   );
 
   return {
